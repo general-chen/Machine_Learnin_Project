@@ -3,7 +3,7 @@
 I use matlab to post process the raw data of experiment.
   - individualRuns.m: This script reads the Force and Pressure data collected from Gust Onset experiments. It synchronizes the position, force, and pressure data for each run of the input test case and saves the compiled results, using smoothing.m to smooth data. Phase-averaging is not done in this script.
   - smoothFunc.m: This is a smooth function used in the main code to smooth data.
-  
+
 Output .h files for machine learning (this was not used in the final training of Machine learning process.)
   - shift_average_trim_combine_4test_randoms.m
   - delta_wing_32cases_split_random.txt: it concludes the split k-fold cross-validation information -- the specific cross-validation case name
