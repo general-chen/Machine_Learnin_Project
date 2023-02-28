@@ -11,4 +11,4 @@ Output .h files for machine learning (this was not used in the final training of
 ################################################################################################
 
 # I use this code to output .csv file and use pandas_read.csv to transform to Dataframe, and the cross-validation is split in pd.Dataframe, more intuitive, more convenient.
-  - output_csv_dataframe_12_28.m: This code outputs the data to .csv, in which, I calculated the 1st and 2nd order derivative of pressure as extra features for Machine Learning, but I find it not help with the improvement of the Machine Learning model, so I did not use the derivatives (although I calculated them).
+  - output_csv_dataframe.m: This code outputs the data to .csv, in which, I calculated the 1st and 2nd order derivative of pressure as extra features for Machine Learning, but I find it not help with the improvement of the Machine Learning model, so I did not use the derivatives (although I calculated them).
