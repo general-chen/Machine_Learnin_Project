@@ -22,7 +22,7 @@ clc
 clear all
 close all
 
-%% read Frieder data. No aoa,just plane force
+%% read data. No aoa, just plane force
 data_Frieder = load('../DataSynchronized5.mat');
 
 %% phase average data, and then filter;
