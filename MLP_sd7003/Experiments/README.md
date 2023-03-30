@@ -1,2 +1,2 @@
 **The effective angle of attack**
-![this is the link of the figure](https://github.com/general-chen/Python/blob/392f00575ead6e11b8d3fa715f8bb7adb46fe091/plot_3d_wing_add_map/deltawing_noFilter.png)
+![this is the link of the figure](https://github.com/general-chen/Machine_Learnin_Project_Data_Driven/blob/14d40fc5e592ac0174e43304bb3294238364b333/MLP_sd7003/Experiments/figures/effective_AoA.png)
