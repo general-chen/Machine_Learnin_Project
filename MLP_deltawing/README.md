@@ -5,5 +5,5 @@
 # Prediction is in:
 - MLP_Prediction 
 - The trained model is saved here .h5 file
-# All the results are comparised in: (filter & no filter, std & mse)
+# All the results are comprised in: (filter & no filter, std & mse)
 - MLP_mse_std_pred
