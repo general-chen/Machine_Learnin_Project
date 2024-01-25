@@ -83,7 +83,7 @@ for i = 1:total_case  % combine (cp, cl, cd)
         end
     end
 
-    % delete the first 3 ghost points; at fitst, need to delete only 2
+    % delete the first 3 ghost points; at first, need to delete only 2
     % ghost points, but in order to keep consistent with 2nd order
     % derivative, here simply delete 3 ghost points
     CP_1st_order{i} = CP_1st_order{i}(4:end,:); 
@@ -150,14 +150,14 @@ for k = [2:10, 12:16, 0]
     col_header = [col_header col_header_temp];     %Row cell array (for column labels)
 end
 
-% create column label for 1st order cerivartive
+% create column label for 1st order derivative
 col_header_1st = {'Cp1_1st_order_t'};
 for k = [2:10, 12:16, 0]
     col_header_temp = {['Cp' num2str(k) '_1st_order_t']};
     col_header_1st = [col_header_1st col_header_temp];     %Row cell array (for column labels)
 end
 
-% create column label for 2nd order cerivartive
+% create column label for 2nd order derivative
 col_header_2nd = {'Cp1_2nd_order_t'};
 for k = [2:10, 12:16, 0]
     col_header_temp = {['Cp' num2str(k) '_2nd_order_t']};
