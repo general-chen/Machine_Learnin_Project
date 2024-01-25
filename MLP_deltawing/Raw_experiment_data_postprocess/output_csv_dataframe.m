@@ -1,4 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% output .csv file
 % insert 1st and 2nd order derivative of all 16 CPs
 % cp'(t) = (3CP(t) - 4*CP(t-1) + CP(t-2)) / (2*deltaT)
 % cp''(t) = (2CP(t) - 5*CP(t-1) + 4CP(t-2) - CP(t-3)) / (deltaT)^2
@@ -167,7 +168,8 @@ end
 col_header = ['case_number' col_header, {'CL'}, {'CD'}, col_header_1st, col_header_2nd];
 
 output_matrix = [col_header; gust_case_all CP_1st_order_all CP_2nd_order_all];
-xlswrite('gust_dataframe.xlsx',output_matrix);     %Write data and both headers
+
+writematrix(output_matrix, 'gust_dataframe.csv');  %Write data and both headers
 
 
 
