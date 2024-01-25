@@ -23,7 +23,7 @@ clear all
 close all
 
 %% read data. No aoa, just plane force
-data_Frieder = load('../DataSynchronized5.mat');
+data_sync = load('../DataSynchronized5.mat');
 
 %% phase average data, and then filter;
 % trim data around the gust: 4601-7100, 2500 points in total
@@ -35,18 +35,18 @@ freq_data  = 1000;
 
 for i = 1:total_case
     
-    CL_temp = smoothFunc(mean(data_Frieder.combineddata{i}.CLall,2), num2str(filter));
-    data_Frieder.combineddata{i}.CLall_PhaseAve_filtered = CL_temp(trim_start:trim_end,:);
+    CL_temp = smoothFunc(mean(data_sync.combineddata{i}.CLall,2), num2str(filter));
+    data_sync.combineddata{i}.CLall_PhaseAve_filtered = CL_temp(trim_start:trim_end,:);
 
-    CD_temp = smoothFunc(mean(data_Frieder.combineddata{i}.CDall,2), num2str(filter));
-    data_Frieder.combineddata{i}.CDall_PhaseAve_filtered = CD_temp(trim_start:trim_end,:);
+    CD_temp = smoothFunc(mean(data_sync.combineddata{i}.CDall,2), num2str(filter));
+    data_sync.combineddata{i}.CDall_PhaseAve_filtered = CD_temp(trim_start:trim_end,:);
     
     % phase average pressure
     for j = 1:10
         
-        CP_temp = smoothFunc(mean(data_Frieder.combineddata{i}.Cpall,3), num2str(filter));
+        CP_temp = smoothFunc(mean(data_sync.combineddata{i}.Cpall,3), num2str(filter));
         CP_temp = CP_temp(:, [1:10 12:end 11]); % adjust the order, 11 is the pitot tube
-        data_Frieder.combineddata{i}.Cpall_PhaseAve_filtered = CP_temp(trim_start:trim_end,:,:);
+        data_sync.combineddata{i}.Cpall_PhaseAve_filtered = CP_temp(trim_start:trim_end,:,:);
 
     end
 
@@ -59,7 +59,7 @@ CP_2nd_order = cell(32,1); % 2nd order derivative of 32 cases
 gust_case    = cell(32,1);   % 32 cases in total
 
 for i = 1:total_case  % combine (cp, cl, cd)
-    gust_case{i} = [data_Frieder.combineddata{i}.Cpall_PhaseAve_filtered ...
+    gust_case{i} = [data_sync.combineddata{i}.Cpall_PhaseAve_filtered ...
         data_Frieder.combineddata{i}.CLall_PhaseAve_filtered ... 
         data_Frieder.combineddata{i}.CDall_PhaseAve_filtered];
 
